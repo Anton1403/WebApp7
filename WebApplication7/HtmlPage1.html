@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8"/>
+    <title>Home</title>
+    <link href="main.css" rel="stylesheet"/>
+
+</head>
+<body>
+<div ng-controller="QuestionController">
+    <h3>{{question.text}}</h3>
+    <p>{{question.author}}</p>
+    <p><i>{{question.date}}</i></p>
+    <hr />
+    <div ng-repeat="answer in question.answers | orderBy:sortparam" class="answer">
+        <div class="rate">
+            <a class="vote-up" ng-click="voteUp(answer)"></a>
+            <span>{{answer.rate}}</span>
+            <a class="vote-down" ng-click="voteDown(answer)"></a>
+        </div>
+        <b>{{answer.text}}</b>
+        <p>{{answer.author}}</p>
+        <p><i>{{answer.date}}</i></p>
+    </div>
+</div>
+
+<script src="Scripts/angular.min.js"></script>
+<script type="text/javascript">
+    var myApp = angular.module('myApp', []);
+</script>
+<script src="Controllers/QuestionController.js"></script>
+</body>
+</html>
