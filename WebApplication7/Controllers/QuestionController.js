@@ -10,16 +10,19 @@ myApp.controller('QuestionController', function ($scope) {
             text: 'AngularJS!',
             author: 'Вова Сидоров',
             date: '20/10/2013',
+            age: 23,
             rate: 2
         }, {
             text: 'AngularJS лучше всех',
             author: 'Олег Кузнецов',
-            date: '20/10/2013',
+                date: '20/10/2013',
+            age: 25,
             rate: 0
         }, {
             text: 'Я бы использовал knockout',
             author: 'Алексей Апанович',
-            date: '21/10/2013',
+                date: '21/10/2013',
+            age: 33,
             rate: 5
         }]
     };

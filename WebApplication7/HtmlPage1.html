@@ -7,7 +7,7 @@
 
 </head>
 <body>
-<div ng-controller="QuestionController">
+<!--<div ng-controller="QuestionController">
     <h3>{{question.text}}</h3>
     <p>{{question.author}}</p>
     <p><i>{{question.date}}</i></p>
@@ -16,18 +16,51 @@
         <div class="rate">
             <a class="vote-up" ng-click="voteUp(answer)"></a>
             <span>{{answer.rate}}</span>
-            <a class="vote-down" ng-click="voteDown(answer)"></a>
+            <a class="vote-down" ng-click="voteDown(answer)"></>
         </div>
         <b>{{answer.text}}</b>
         <p>{{answer.author}}</p>
         <p><i>{{answer.date}}</i></p>
     </div>
 </div>
+-->
 
+
+<!--
+<div ng-controller="QuestionController">
+    <select ng-model="answer.author">
+        <option ng-repeat="answer in question.answers">{{answer.author}}</option>
+    </select>
+    <select>
+        <option ng-repeat="selected_answer in question.answers | filter:answer">{{selected_answer.date}}</option>
+    </select>
+</div>
+-->
+
+<div  ng-controller="QuestionController">
+    <div class="quest">
+        <h3>{{question.text}}</h3>
+        <p>{{question.author}} </p> <p><i>{{question.date}}</i></p>
+    </div>
+    <p>Введите ответчика: <input type="text" ng-model="member"></p>
+    <h3>Ответы</h3>
+    <div>
+        <div ng-repeat="a in question.answers | filter:{age:member}" >
+            <div class="vote">
+                <a class="vote-up" ng-click="voteUp(a)"></a>
+                <span class="rate">{{a.rate}}</span>
+                <a class="vote-down" ng-click="voteDown(a)"></a>
+            </div>
+            <b>{{a.text}}</b>
+            <p>{{a.author}}</p>
+            <p><i>{{a.date}}</i></p>
+        </div>
+    </div>
+</div>
 <script src="Scripts/angular.min.js"></script>
-<script type="text/javascript">
-    var myApp = angular.module('myApp', []);
-</script>
-<script src="Controllers/QuestionController.js"></script>
+    <script type="text/javascript">
+        var myApp = angular.module('myApp', []);
+    </script>
+    <script src="Controllers/QuestionController.js"></script>
 </body>
 </html>
