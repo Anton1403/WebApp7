@@ -42,10 +42,19 @@
         <h3>{{question.text}}</h3>
         <p>{{question.author}} </p> <p><i>{{question.date}}</i></p>
     </div>
-    <p>Введите ответчика: <input type="text" ng-model="member"></p>
+ <!--   <p>Введите ответчика: <input type="text" ng-model="member"></p>
+ -->    
+        <select ng-model="answer.author">
+            <option ng-repeat="answer in question.answers" >{{answer.author}}</option>
+        </select>
+        <select>
+            <option ng-repeat="selected_answer in question.answers | filter:answer">{{selected_answer.date}}</option>
+        </select>
+    
+
     <h3>Ответы</h3>
     <div>
-        <div ng-repeat="a in question.answers | filter:{age:member}" >
+        <div ng-repeat="a in question.answers | filter:answer" >
             <div class="vote">
                 <a class="vote-up" ng-click="voteUp(a)"></a>
                 <span class="rate">{{a.rate}}</span>

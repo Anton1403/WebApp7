@@ -24,6 +24,12 @@ myApp.controller('QuestionController', function ($scope) {
                 date: '21/10/2013',
             age: 33,
             rate: 5
+            }, {
+                text: 'TypeScript',
+                author: 'Алексей Апанович',
+                date: '22/10/2013',
+                age: 33,
+                rate: 3
         }]
     };
     $scope.voteUp = function (answer) {
