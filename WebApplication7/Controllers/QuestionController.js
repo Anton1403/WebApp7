@@ -1,5 +1,5 @@
-﻿var myApp = angular.module('myApp');
-myApp.controller('QuestionController', function ($scope) {
+﻿
+questApp.controller('QuestionController', function QuestionController($scope) {
 
     $scope.sortparam = '-rate';
     $scope.question = {
@@ -25,7 +25,7 @@ myApp.controller('QuestionController', function ($scope) {
             age: 33,
             rate: 5
             }, {
-                text: 'TypeScript',
+                text: 'фигасе ты даешь',
                 author: 'Алексей Апанович',
                 date: '22/10/2013',
                 age: 33,

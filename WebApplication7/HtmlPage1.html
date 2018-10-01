@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html ng-app="myApp">
+<html ng-app="questApp">
 <head>
     <meta charset="utf-8"/>
     <title>Home</title>
@@ -38,7 +38,7 @@
 -->
 
 <div  ng-controller="QuestionController">
-    <div class="quest">
+    <div>
         <h3>{{question.text}}</h3>
         <p>{{question.author}} </p> <p><i>{{question.date}}</i></p>
     </div>
@@ -54,22 +54,21 @@
 
     <h3>Ответы</h3>
     <div>
-        <div ng-repeat="a in question.answers | filter:answer" >
-            <div class="vote">
+        <div ng-repeat="a in question.answers | filter:answer | filter:selected_answer.date" >
+            <div>
                 <a class="vote-up" ng-click="voteUp(a)"></a>
                 <span class="rate">{{a.rate}}</span>
                 <a class="vote-down" ng-click="voteDown(a)"></a>
             </div>
-            <b>{{a.text}}</b>
+            <b>{{a.text | formatText}}</b>
             <p>{{a.author}}</p>
             <p><i>{{a.date}}</i></p>
         </div>
     </div>
 </div>
 <script src="Scripts/angular.min.js"></script>
-    <script type="text/javascript">
-        var myApp = angular.module('myApp', []);
-    </script>
-    <script src="Controllers/QuestionController.js"></script>
+<script src="Js/app.js"></script>
+<script src="Controllers/QuestionController.js"></script>
+<script src="Js/filter.js"></script>
 </body>
 </html>
