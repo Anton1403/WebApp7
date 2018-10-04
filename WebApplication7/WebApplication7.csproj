@@ -166,6 +166,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="HtmlPage1.html" />
+    <Content Include="Js\answerList.js" />
     <Content Include="Js\app.js" />
     <Content Include="Js\DOM.js" />
     <Content Include="Js\filter.js" />

@@ -36,38 +36,38 @@
     -->
     
     <div ng-controller="QuestionController">
-        <div>
-            <h3>{{question.text}}</h3>
-            <p>{{question.author}} </p>
+    <div>
+        <h3>{{question.text}}</h3>
+        <p>{{question.author}} </p>
+        <p>
+            <i>{{question.date}}</i>
+        </p>
+    </div>
+    <!--
+    <select ng-model="answer.author">
+        <option ng-repeat="answer in question.answers">{{answer.author}}</option>
+    </select>
+    <select ng-model="selected_answer.date">
+        <option ng-repeat="selected_answer in question.answers | filter:answer">{{selected_answer.date}}</option>
+    </select>
+
+    <div class="quest">
+        <h3>Ответы</h3>
+    </div>
+    <div>
+        <div ng-repeat="a in question.answers | filter:answer | filter:selected_answer.date">
+            <div>
+                <a class="vote-up" ng-click="voteUp(a)"></a>
+                <span class="rate">{{a.rate}}</span>
+                <a class="vote-down" ng-click="voteDown(a)"></a>
+            </div>
+            <b>{{a.text | formatText}}</b>
+            <p>{{a.author}}</p>
             <p>
-                <i>{{question.date}}</i>
+                <i>{{a.date}}</i>
             </p>
         </div>
-
-        <select ng-model="answer.author">
-            <option ng-repeat="answer in question.answers">{{answer.author}}</option>
-        </select>
-        <select ng-model="selected_answer.date">
-            <option ng-repeat="selected_answer in question.answers | filter:answer">{{selected_answer.date}}</option>
-        </select>
-
-        <div class="quest">
-            <h3>Ответы</h3>
-        </div>
-        <div>
-            <div ng-repeat="a in question.answers | filter:answer | filter:selected_answer.date">
-                <div>
-                    <a class="vote-up" ng-click="voteUp(a)"></a>
-                    <span class="rate">{{a.rate}}</span>
-                    <a class="vote-down" ng-click="voteDown(a)"></a>
-                </div>
-                <b>{{a.text | formatText}}</b>
-                <p>{{a.author}}</p>
-                <p>
-                    <i>{{a.date}}</i>
-                </p>
-            </div>
-        </div>
+    </div>
     </div>
     
 
@@ -94,11 +94,16 @@
             <button type="submit" ng-click="save(answer, answerForm)">Сохранить ответ</button>
         </form>
     </div>
+        
+    -->
+    <div answer-list="question"></div>
+</div>
     <script src="Scripts/angular.min.js"></script>
     <script src="Js/app.js"></script>
     <script src="Controllers/QuestionController.js"></script>
     <script src="Controllers/AnswerController.js"></script>
 <script src="Js/filter.js"></script>
 <script src="Js/DOM.js"></script>
+<script src="Js/answerList.js"></script>
 </body>
 </html>
