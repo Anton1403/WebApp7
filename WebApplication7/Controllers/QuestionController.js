@@ -29,7 +29,7 @@ questApp.controller('QuestionController', function QuestionController($scope) {
                 author: 'Алексей Апанович',
                 date: '22/10/2013',
                 age: 33,
-                rate: 3
+                rate: 31
         }]
     };
     $scope.voteUp = function (answer) {

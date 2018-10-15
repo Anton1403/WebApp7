@@ -34,15 +34,17 @@
         </select>
     </div>
     -->
-    
+
     <div ng-controller="QuestionController">
-    <div>
-        <h3>{{question.text}}</h3>
-        <p>{{question.author}} </p>
-        <p>
-            <i>{{question.date}}</i>
-        </p>
+        <div class="quest">
+            <h3>{{question.text}}</h3>
+            <p>{{question.author}} </p> <p><i>{{question.date}}</i></p>
+        </div>
+        <div answer-list><h3>Ответы</h3></div>
     </div>
+
+
+
     <!--
     <select ng-model="answer.author">
         <option ng-repeat="answer in question.answers">{{answer.author}}</option>
@@ -69,7 +71,9 @@
         </div>
     </div>
     </div>
-    
+
+
+
 
     <div ng-controller="AnswerController">
         <form name="answerForm">
@@ -94,16 +98,16 @@
             <button type="submit" ng-click="save(answer, answerForm)">Сохранить ответ</button>
         </form>
     </div>
-        
     -->
-    <div answer-list="question"></div>
-</div>
+
+
+
     <script src="Scripts/angular.min.js"></script>
     <script src="Js/app.js"></script>
     <script src="Controllers/QuestionController.js"></script>
     <script src="Controllers/AnswerController.js"></script>
-<script src="Js/filter.js"></script>
-<script src="Js/DOM.js"></script>
-<script src="Js/answerList.js"></script>
+    <script src="Js/filter.js"></script>
+    <script src="Js/DOM.js"></script>
+    <script src="Js/answerList.js"></script>
 </body>
 </html>
